@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<section>
+    <div class="container">
+        <div class="entry-list single">
+            <article>
+                <div class="entry">
+                    <h3>Content</h3>
+                    <p>{{ post.content }}</p>
+                </div>
+                <div class="entry">
+                    <h3>Title</h3>
+                    <p>{{ post.title }}</p>
+                </div>
+                <div class="entry">
+                    <h3>Time Spent</h3>
+                    <p>{{ post.time_spent }}</p>
+                </div>
+                <div class="entry">
+                    <h3>Resources to remember</h3>
+                    <p>{{ post.resources }}</p>
+                </div>
+                <div class="entry">
+                    <h3>Date: </h3>
+                    <p>{{ post.date }}</p>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+{% endblock %}

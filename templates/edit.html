@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+{% from 'macros.html' import render_field %}
+{% block content %}
+
+    <div class="container">
+        <div class="entry-list">
+            <h2>Edit entry</h2>
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <div class="entry">
+                    <h4>
+                        <label for="title">Title: </label>
+                    </h4>
+                    {{ form.title }}
+                </div>
+
+                <div class="entry">
+                    <h4>
+                        <label for="date">Date: </label>
+                    </h4>
+                    {{ form.date }}
+                </div>
+
+                <div class="entry">
+                    <h4>
+                        <label for="time_spent">Time spent: </label>
+                    </h4>
+                    {{ form.time_spent }}
+                </div>
+
+                <div class="entry">
+                    <h4>
+                        <label for="content">What i have learned: </label>
+                    </h4>
+                    {{ form.content }}
+                </div>
+
+                <div class="entry">
+                    <h4>
+                        <label for="resources">Resources to remember: </label>
+                    </h4>
+                    {{ form.resources }}
+                </div>
+
+                <div class="entry">
+                <input type="submit" value="Confirm Edit" class="button" />
+                </div>
+
+                <a href="{{ url_for('view_post', id=post.id) }}" class="button button-secondary">Cancel</a>
+
+                <a href="{{ url_for('delete_post', id=post.id) }}" class="button button-warning">Delete</a>
+
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
