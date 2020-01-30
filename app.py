@@ -100,7 +100,7 @@ def edit_post(id):
     except models.DoesNotExist:
         abort(404)
     else:        
-        form = forms.AddEntryForm()
+        form = forms.AddEntryForm(obj=post)
         if form.validate_on_submit():
             with models.DATABASE.transaction():
                 post.title = form.title.data
